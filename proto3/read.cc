@@ -13,8 +13,9 @@ void PrintContacts(contacts2::Contacts& contacts)
         cout << "age:    " << people.age() << endl;
         for (int j = 0; j < people.phone_size(); j++)
         {
-            const contacts2::PeopleInfo_Phone& phone = people.phone(i);
-            cout << "phone" << j << ": " << phone.number() << endl;
+            const contacts2::PeopleInfo_Phone& phone = people.phone(j);
+            cout << "phone" << j << ": " << phone.number();
+            cout << "    (" << phone.PhoneType_Name(phone.type()) << ")" << endl;
         }
     }
 }

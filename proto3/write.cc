@@ -30,6 +30,23 @@ void AddPeopleInfo(contacts2::PeopleInfo* people)
         
         contacts2::PeopleInfo_Phone* phone = people->add_phone();
         phone->set_number(number);
+
+        cout << "Enter Phone Type(1. Mobile  2. Telephone): ";
+        int type;
+        cin >> type;
+        cin.ignore(256, '\n');
+        switch (type)
+        {
+        case 1:
+            phone->set_type(contacts2::PeopleInfo_Phone_PhoneType::PeopleInfo_Phone_PhoneType_MP);
+            break;
+        case 2:
+            phone->set_type(contacts2::PeopleInfo_Phone_PhoneType::PeopleInfo_Phone_PhoneType_TEL);
+            break;
+        default:
+            cout << "Selected error!" << endl;
+            break;
+        }
     }
 
     cout << "----------Added     Success-----------" << endl;
