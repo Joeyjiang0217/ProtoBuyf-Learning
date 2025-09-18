@@ -1,0 +1,13 @@
+// first line: Syntax specification line
+syntax = "proto3";
+
+package contacts; // namespace
+
+// define contacts info
+message PeopleInfo
+{
+    // name
+    string name = 1;
+    // age
+    int32 age = 2;
+}
