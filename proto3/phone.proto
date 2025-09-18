@@ -1,0 +1,8 @@
+// first line: Syntax specification line
+syntax = "proto3";
+package phone; // namespace
+
+message Phone
+{
+    string number = 1;
+}
