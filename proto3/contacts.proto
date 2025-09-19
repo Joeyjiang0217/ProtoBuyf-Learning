@@ -29,7 +29,16 @@ message PeopleInfo
     }
     repeated Phone phone = 3;
     google.protobuf.Any data = 4;
+
+    oneof other_contact
+    {
+        // keyword repeated not allowed
+        string qq = 5;
+        string wechat = 6;
+    }
+
 }
+    
 
 // contacts info
 message Contacts

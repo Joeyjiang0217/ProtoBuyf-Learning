@@ -62,6 +62,30 @@ void AddPeopleInfo(contacts2::PeopleInfo* people)
     // Address to Any
     people->mutable_data()->PackFrom(address);
 
+    cout << "Enter other contact info(1. qq     2.wechat): ";
+    int other_contact;
+    cin >> other_contact;
+    cin.ignore(256, '\n');
+    if (1 == other_contact)
+    {
+        cout << "Enter qq: ";
+        string qq;
+        getline(cin, qq);
+        people->set_qq(qq);
+    }
+    else if (2 == other_contact)
+    {
+        cout << "Enter wechat: ";
+        string wechat;
+        getline(cin, wechat);
+        people->set_wechat(wechat);
+    }
+    else
+    {
+        cout << "Enter error, failed to set other contact info!" << endl;
+    }
+
+
     cout << "----------Added     Success-----------" << endl;
 }
 

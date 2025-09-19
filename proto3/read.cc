@@ -29,7 +29,26 @@ void PrintContacts(contacts2::Contacts& contacts)
             {
                 cout << "unit address: " << address.unit_address() << endl;
             }
-            
+        }
+
+        // if (people.has_qq())
+        // {
+
+        // }
+        // else if (people.has_wechat())
+        // {
+
+        // }
+        switch (people.other_contact_case())
+        {
+        case contacts2::PeopleInfo::OtherContactCase::kQq:
+            cout << "qq: " << people.qq() << endl;
+            break;
+        case contacts2::PeopleInfo::OtherContactCase::kWechat:
+            cout << "wechat: " << people.wechat() << endl;
+            break;
+        default:
+            break;
         }
     }
 }
