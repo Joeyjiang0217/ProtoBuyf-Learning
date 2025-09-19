@@ -37,6 +37,8 @@ message PeopleInfo
         string wechat = 6;
     }
 
+    map<string, string> remark = 7;
+
 }
     
 

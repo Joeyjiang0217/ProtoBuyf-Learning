@@ -85,6 +85,22 @@ void AddPeopleInfo(contacts2::PeopleInfo* people)
         cout << "Enter error, failed to set other contact info!" << endl;
     }
 
+    for (int i = 0;; i++)
+    {
+        cout << "Enter remark" << i+1 << " key: ";
+        string remark_key;
+        getline(cin, remark_key);
+        if (remark_key.empty())
+        {
+            break;
+        }
+
+        cout << "Enter remark" << i+1 << ": ";
+        string remark_value;
+        getline(cin, remark_value);
+        people->mutable_remark()->insert({remark_key, remark_value});
+    }
+
 
     cout << "----------Added     Success-----------" << endl;
 }

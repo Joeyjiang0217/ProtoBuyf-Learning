@@ -50,6 +50,16 @@ void PrintContacts(contacts2::Contacts& contacts)
         default:
             break;
         }
+
+        if (people.remark_size())
+        {
+            cout << "remark: " << endl;
+        }
+
+        for (auto it = people.remark().cbegin(); it != people.remark().cend(); it++)
+        {
+            cout << "        " << it->first << ": " << it->second << endl;
+        }
     }
 }
 
