@@ -49,6 +49,19 @@ void AddPeopleInfo(contacts2::PeopleInfo* people)
         }
     }
 
+    contacts2::Address address;
+    cout << "Enter the home address: ";
+    string home_address;
+    getline(cin, home_address);
+    address.set_home_address(home_address);
+    cout << "Enter the work address: ";
+    string unit_address;
+    getline(cin, unit_address);
+    address.set_unit_address(unit_address);
+
+    // Address to Any
+    people->mutable_data()->PackFrom(address);
+
     cout << "----------Added     Success-----------" << endl;
 }
 

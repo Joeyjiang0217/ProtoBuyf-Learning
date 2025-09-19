@@ -17,6 +17,20 @@ void PrintContacts(contacts2::Contacts& contacts)
             cout << "phone" << j << ": " << phone.number();
             cout << "    (" << phone.PhoneType_Name(phone.type()) << ")" << endl;
         }
+        if (people.has_data() && people.data().Is<contacts2::Address>())
+        {
+            contacts2::Address address;
+            people.data().UnpackTo(&address);
+            if (!address.home_address().empty())
+            {
+                cout << "home address: " << address.home_address() << endl;
+            }
+            if (!address.unit_address().empty())
+            {
+                cout << "unit address: " << address.unit_address() << endl;
+            }
+            
+        }
     }
 }
 
